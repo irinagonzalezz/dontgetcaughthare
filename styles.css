@@ -1,0 +1,187 @@
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  background: white;
+  color: black;
+}
+
+/* LAYOUT */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  padding: 40px 24px;
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  height: 100vh;
+  background: white;
+}
+
+/* RITMO */
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* LOGO */
+.logo {
+  margin: 0;
+}
+
+.logo a {
+  font-family: inherit;
+  color: #7d1818;
+  font-size: 1.3rem;
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.logo a:hover { text-decoration: underline; }
+
+/* --- GESTO ORGÁNICO (Don’t / get / caught) --- */
+/* Importante: esto afecta a los spans directos del logo (las 3 palabras de arriba) */
+.logo > a > span {
+  display: inline-block;
+}
+
+.logo > a > span:nth-child(1) {
+  transform: translateY(1px) rotate(-0.6deg);
+}
+
+.logo > a > span:nth-child(2) {
+  transform: translateY(-2px) rotate(0.8deg);
+}
+
+.logo > a > span:nth-child(3) {
+  transform: translateY(1px) translateX(-2px) rotate(-0.4deg);
+}
+
+/* BASE: todas las letras preparadas */
+.logo .hare-run span {
+  display: inline-block;
+  transition: none;
+}
+
+/* ---------- POSE 1 (estado normal) ---------- */
+.logo .hare-run .h { transform: translateY(-2px); }
+.logo .hare-run .a { transform: translateY(1.5px); }
+.logo .hare-run .r { transform: translateY(1.2px); }
+.logo .hare-run .e { transform: translateY(-1.6px); }
+
+/* ---------- POSE 2 (solo hover = cambio) ---------- */
+.logo a:hover .hare-run .h { transform: translateY(1.5px); }
+.logo a:hover .hare-run .a { transform: translateY(-2px); }
+.logo a:hover .hare-run .r { transform: translateY(-1.6px); }
+.logo a:hover .hare-run .e { transform: translateY(1.2px); }
+
+
+
+.logo a:hover {
+  text-decoration: underline;
+}
+
+/* MENU */
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* CONTENIDO */
+.content {
+  margin-left: 220px;
+  padding: 60px 60px 60px 54px;
+  max-width: 1200px;
+}
+
+/* ---------- CONTACT ---------- */
+.contact {
+  outline: 1px solid red;
+}
+
+.meadow{
+  margin-top: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  white-space: pre;
+  color: #111;
+  opacity: 0.85;          /* clave: que no parezca “meme” */
+  overflow-x: auto;       /* si la pantalla es pequeña, que no rompa el layout */
+  padding: 0;
+}
+
+.meadow-link{
+  color: #7d1818;         /* tu acento */
+  text-decoration: none;
+}
+
+.meadow-link:hover{
+  text-decoration: underline;
+}
+
+/* GRID (IMPORTANTE AQUÍ ESTABA EL PROBLEMA) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.project img {
+  width: 100%;
+}
+
+.project h3 {
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+
+.about p {
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+
+/* ---------- INDEX ---------- */
+
+.intro {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 520px;
+  margin-top: 20px;
+}
